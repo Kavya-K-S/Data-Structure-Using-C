@@ -1,0 +1,57 @@
+#include<stdio.h>
+int stack[10],top=-1;
+void push(){
+	if(top+1==10)
+	  printf("STACK FULL");
+	else
+	{
+		printf("Enter a value :");
+		scanf("%d",&stack[++top]);
+		}
+}
+void peek(){
+	if(top==-1){
+		printf("STACK : EMPTY");
+	}
+	else{
+		int i;
+		for(i=0;i<=top;i++)
+		  printf("%d\t",stack[i]);
+	}
+	printf("\n");
+}
+void pop(){
+	if(top==-1)
+	  printf("STACK : EMPTY");
+	else
+	  top--;	  	
+}
+int menu(){
+	int ch;
+	printf("\n");
+	printf("1.Push\t2.Peek\t3.Pop\t4.Exit :");
+	scanf("%d",&ch);
+	printf("\n");
+	return ch;
+}
+void main(){
+	int ch;
+	for(ch=menu();ch!=4;ch=menu()){
+		switch(ch){
+			case 1:
+				push();
+				break;
+			case 2:
+				peek();
+				break;
+			case 3:
+				pop();
+				break;
+			case 4:
+				break;
+			default:
+                                                          printf("Wrong choice");
+				break;	
+		}
+	}
+}
