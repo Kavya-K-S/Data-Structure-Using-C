@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+char ch[20];int n=-1;
+void reverse(){
+	int i;
+	for(i=strlen(ch);i>=0;i--)
+	   printf("%c",ch[i]);
+}
+void main(){
+	int i;
+	printf("Enter a string :");
+	scanf("%s",ch);
+	reverse();
+	
+}
