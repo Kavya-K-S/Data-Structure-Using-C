@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+char str[10][10];
+int n;
+void main(){
+	int i,j;
+	char temp[10];
+	printf("Enter the number of strings :");
+	scanf("%d",&n);
+	printf("Enter the strings :");
+	for(i=0;i<n;i++)
+	   scanf("%s",str[i]);
+	for(i=0;i<n;i++){
+		for(j=i+1;j<n;j++){
+			if(strcmp(str[i],str[j])>0)
+			  {
+			  	strcpy(temp,str[i]);
+                strcpy(str[i],str[j]);
+                strcpy(str[j],temp);
+			  }
+			  
+		}
+	}
+printf("Sorted string array :\n");
+for(i=0;i<n;i++)
+    printf("%s\t",str[i]);
+}
